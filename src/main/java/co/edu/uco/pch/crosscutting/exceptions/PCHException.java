@@ -16,14 +16,14 @@ public class PCHException extends RuntimeException{
 		setMensajeUsuario(mensajeUsuario);
 		setLugar(lugar);
 	}
-	public PCHException(final String mensajeUsuario, Lugar lugar) {
+	public PCHException(final String mensajeUsuario,final Lugar lugar) {
 		super(mensajeUsuario);
 		setMensajeUsuario(mensajeUsuario);
 		setLugar(lugar);
 	}
 	
 	public PCHException( String mensajeTecnico,String mensajeUsuario, Lugar lugar) {
-		super(mensajeTecnico);
+		super(mensajeUsuario);
 		setMensajeUsuario(mensajeUsuario);
 		setLugar(lugar);
 	}
