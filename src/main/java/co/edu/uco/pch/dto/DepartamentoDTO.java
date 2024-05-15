@@ -2,6 +2,8 @@ package co.edu.uco.pch.dto;
 
 import java.util.UUID;
 
+
+
 public final class DepartamentoDTO {
 	private UUID id;
 	private String nombre;
