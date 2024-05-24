@@ -27,3 +27,4 @@ public interface DAOFactory {
 
 	CiudadDAO getCiudadDAO();
 }
+

@@ -5,7 +5,6 @@ import java.util.Map;
 
 import co.edu.uco.pch.crosscutting.exceptions.custom.CrosscuttingPCHException;
 import co.edu.uco.pch.crosscutting.exceptions.messagecatalog.MessageCatalog;
-import co.edu.uco.pch.crosscutting.exceptions.messagecatalog.MessageCatalogStrategy;
 import co.edu.uco.pch.crosscutting.exceptions.messagecatalog.data.CodigoMensaje;
 import co.edu.uco.pch.crosscutting.exceptions.messagecatalog.data.Mensaje;
 import co.edu.uco.pch.crosscutting.helpers.ObjectHelper;

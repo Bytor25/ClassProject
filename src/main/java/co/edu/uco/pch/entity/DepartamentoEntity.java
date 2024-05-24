@@ -46,5 +46,6 @@ public final class DepartamentoEntity {
 		this.pais = ObjectHelper.getObjectHelper().getDefaultValue(pais, new PaisEntity());
 		return this;
 	}
+	
 
 }
