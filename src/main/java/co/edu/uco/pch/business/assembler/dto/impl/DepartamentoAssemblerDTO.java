@@ -1,11 +1,13 @@
 package co.edu.uco.pch.business.assembler.dto.impl;
 
-
 import co.edu.uco.pch.business.assembler.dto.AssemblerDTO;
 import co.edu.uco.pch.business.domain.DepartamentoDomain;
 import co.edu.uco.pch.business.domain.PaisDomain;
 
 import static co.edu.uco.pch.crosscutting.helpers.ObjectHelper.getObjectHelper;
+
+import java.util.List;
+
 import co.edu.uco.pch.dto.DepartamentoDTO;
 import co.edu.uco.pch.dto.PaisDTO;
 
@@ -16,7 +18,9 @@ public final class DepartamentoAssemblerDTO implements AssemblerDTO<Departamento
 	private static final AssemblerDTO<DepartamentoDomain, DepartamentoDTO> instance = new DepartamentoAssemblerDTO();
 	
 	
-	
+	private DepartamentoAssemblerDTO() {
+		super();
+	}
 
 	public static final AssemblerDTO<DepartamentoDomain, DepartamentoDTO> getInstance(){
 		return instance;
@@ -33,7 +37,17 @@ public final class DepartamentoAssemblerDTO implements AssemblerDTO<Departamento
 	public DepartamentoDTO toDTO(final DepartamentoDomain domain) {
 		var departamentoDomainTmp = getObjectHelper().getDefaultValue(domain, DepartamentoDomain.build());
 		var paisDto = paisAssembler.toDTO(departamentoDomainTmp.getPais());
-		return DepartamentoDTO.build().setId(departamentoDomainTmp.getId()).setNombre(departamentoDomainTmp.getNombre());
+		return DepartamentoDTO.build().setId(departamentoDomainTmp.getId()).setNombre(departamentoDomainTmp.getNombre()).setPais(paisDto);
+	}
+	@Override
+	public List<DepartamentoDomain> toDomainCollection(List<DepartamentoDTO> EntityCollection) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public List<DepartamentoDTO> toDTOCollection(List<DepartamentoDomain> domainCollection) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	 
 

@@ -3,13 +3,15 @@ package co.edu.uco.pch.entity;
 import java.util.UUID;
 
 import co.edu.uco.pch.crosscutting.helpers.TextHelper;
+import co.edu.uco.pch.crosscutting.helpers.UUIDHelper;
 
 public final class PaisEntity {
 	private UUID id;
 	private String nombre;
 	
 	public PaisEntity() {
-	super();
+		setId(UUIDHelper.getDefault());
+		setNombre(TextHelper.EMPTY);
 	}
 	
 	public PaisEntity(final UUID id, final String nombre) {

@@ -14,7 +14,7 @@ public class UUIDHelper {
 		return UUID.fromString(uuidAsString);
 	}
 	
-	public static final UUID getDafault(final UUID value, final UUID defaultValue) {
+	public static final UUID getDefault(final UUID value, final UUID defaultValue) {
 		return ObjectHelper.getObjectHelper().getDefaultValue(value, defaultValue);
 	}
 	
@@ -28,6 +28,10 @@ public class UUIDHelper {
 
 	public static UUID convertirStringaUUID(String uuidString) {
         return UUID.fromString(uuidString);        
+	}
+	
+	public static final boolean isDefault(final UUID value) {
+		return getDefault(value, getDefault()).equals(getDefault());
 	}
 	
 }

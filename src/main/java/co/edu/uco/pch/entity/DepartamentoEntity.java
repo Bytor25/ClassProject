@@ -4,6 +4,7 @@ import java.util.UUID;
 
 import co.edu.uco.pch.crosscutting.helpers.ObjectHelper;
 import co.edu.uco.pch.crosscutting.helpers.TextHelper;
+import co.edu.uco.pch.crosscutting.helpers.UUIDHelper;
 
 
 public final class DepartamentoEntity {
@@ -12,7 +13,9 @@ public final class DepartamentoEntity {
 	private PaisEntity pais;
 	
 	public DepartamentoEntity() {
-		super();
+		setId  (UUIDHelper.getDefault());
+		setNombre  (TextHelper.EMPTY);
+		setPais  (PaisEntity.build());
 	}
 	
 	public DepartamentoEntity(final UUID id, final String nombre, final PaisEntity pais) {

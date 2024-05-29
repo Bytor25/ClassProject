@@ -3,20 +3,26 @@ package co.edu.uco.pch.entity;
 import java.util.UUID;
 
 import co.edu.uco.pch.crosscutting.helpers.ObjectHelper;
+import co.edu.uco.pch.crosscutting.helpers.TextHelper;
+import co.edu.uco.pch.crosscutting.helpers.UUIDHelper;
 
 public final class CiudadEntity {
 	private UUID id;
 	private String nombre;
 	private DepartamentoEntity Departamento;
 
-	public CiudadEntity(){
-		super();
-	}
 	
 	public CiudadEntity(final UUID id,final  String nombre, final DepartamentoEntity departamento) {
 		setId  (id);
 		setNombre  (nombre);
 		setDepartamento  (departamento);
+	}
+	
+	public CiudadEntity() {
+		
+		setId  (UUIDHelper.getDefault());
+		setNombre  (TextHelper.EMPTY);
+		setDepartamento  (DepartamentoEntity.build());
 	}
 	
 	public static final CiudadEntity build() {

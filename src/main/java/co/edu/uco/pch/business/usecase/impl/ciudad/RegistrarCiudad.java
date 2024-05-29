@@ -14,8 +14,6 @@ import co.edu.uco.pch.crosscutting.exceptions.custom.BusinessPCHException;
 public final class RegistrarCiudad implements UseCaseWithoutReturn<CiudadDomain> {
 	
 	private DAOFactory factory;
-	
-	
 
 	public RegistrarCiudad(final DAOFactory factory) {
 		if(ObjectHelper.getObjectHelper().isNull(factory)) {
@@ -42,6 +40,7 @@ public final class RegistrarCiudad implements UseCaseWithoutReturn<CiudadDomain>
 		var ciudadEntity = CiudadEntity.build().setId(generarIdentificadorCiudad()).setNombre(data.getNombre()).setDepartamento(DepartamentoAssemblerEntity.getInstance().toEntity(data.getDepartamento())); 
 		
 		// 4. guardar la nueva ciudad
+		
 		
 		factory.getCiudadDAO().crear(ciudadEntity);
 		

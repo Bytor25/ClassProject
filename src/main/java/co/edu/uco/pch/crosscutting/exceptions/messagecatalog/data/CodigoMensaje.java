@@ -78,8 +78,5 @@ public enum CodigoMensaje {
 				getCategoria().name(),UNDERLINE, getCodigo());
 	}
 	
-	public static void main(String[] args) {
-		System.out.println(M00001.getIdentificador());
-	}
 	
 }

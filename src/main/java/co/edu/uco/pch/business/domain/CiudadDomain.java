@@ -12,7 +12,8 @@ public class CiudadDomain {
 	private String nombre;
 	private DepartamentoDomain departamento;
 	
-	private CiudadDomain(UUID id, String nombre, DepartamentoDomain departamento) {
+	
+	private CiudadDomain(final UUID id, final String nombre, final DepartamentoDomain departamento) {
 		setId(id);
 		setNombre(nombre);
 		setDepartamento(departamento);
@@ -29,6 +30,7 @@ public class CiudadDomain {
 	public static final CiudadDomain build() {
 		return new CiudadDomain(UUIDHelper.getDefault(),TextHelper.EMPTY,DepartamentoDomain.build());
 	}
+	
 	// Getters
 	
 	public final UUID getId() {
@@ -44,8 +46,9 @@ public class CiudadDomain {
 	}
 
 	// Setters
+	
 	private final void setId(final UUID id) {
-		this.id = UUIDHelper.getDafault(id, UUIDHelper.getDefault());
+		this.id = UUIDHelper.getDefault(id, UUIDHelper.getDefault());
 	}
 	
 	private final void setNombre(final String nombre) {
@@ -56,6 +59,4 @@ public class CiudadDomain {
 		this.departamento = ObjectHelper.getObjectHelper().getDefaultValue(departamento, DepartamentoDomain.build()) ;
 	}
 	
-	
-
 }
